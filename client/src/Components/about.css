@@ -1,0 +1,63 @@
+
+@keyframes rotateHexagon {
+    0% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+.hexagon {
+    position: relative;
+    
+    background-color: rgb(132, 169, 247);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.3 2 200px rgba(29, 192, 224, 0.5);
+    
+    animation: rotateHexagon 4s infinite  ;
+  }
+  
+  .hexagon::before,
+  .hexagon::after {
+    content: '';
+    position: absolute;
+    /* width: inherit; */
+    /* height: 100%;
+    width: 100%; */
+    background: inherit;
+    clip-path: inherit;
+    z-index: -1;
+    box-shadow: inherit;
+    border-radius:inherit;
+  }
+  
+  .hexagon::before {
+    transform: translateY(4px);
+    border-radius: inherit;
+    filter: blur(4px);
+  }
+  
+  .hexagon::after {
+     transform: translateY(-4px);
+     border-radius: inherit;
+    filter: blur(100%);
+  }
+  
+  .hexagon-img {
+    clip-path: inherit;
+  }
+  
+
+
+
+
+
+
+  
+  
+  
+  
+
